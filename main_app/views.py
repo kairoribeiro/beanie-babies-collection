@@ -3,7 +3,6 @@ from django.http import HttpResponse
 from .models import Baby
 
 
-
 # Create your views here.
 
 def home(request):
