@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="{% static 'css/babies/baby-detail.css' %}"
+/>
+{% endblock %}
+
+{% block content %}
+
+<section class="baby-container">
+  <div class="baby-img">
+    {%if baby.image %}
+    <img src={{ baby.image.url }} alt="">
+    {%endif%}
+
+  </div>
+  <div class="baby-details">
+    <h1>{{ baby.name }}</h1>
+    <p>{{ baby.description }}</p>
+    <p>Year: <small>{{ baby.year }}</small></p>
+
+  </div>
+</section>
+
+{% endblock %}

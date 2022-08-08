@@ -13,31 +13,29 @@
 
 <section class="page-header">
   <h1>Babies List</h1>
-  <img src="{% static 'images/cool-baby.svg' %}" alt="A cool baby" />
+  {% comment %} <img src="{% static 'images/cool-baby.svg' %}" alt="A cool baby" />
   <img src="{% static 'images/happy-baby.svg' %}" alt="A happy baby" />
   <img src="{% static 'images/teacup-baby.svg' %}" alt="A baby in a teacup" />
-  <img src="{% static 'images/baby-in-box.svg' %}" alt="A baby in a box" />
+  <img src="{% static 'images/baby-in-box.svg' %}" alt="A baby in a box" /> {% endcomment %}
 </section>
 
 <section class="card-container">
   {% for baby in babies %}
     <div class="card">
+      <a href="{% url 'babies_detail' baby.id %}">
       <div class="card-content">
         <div class="card-img-container">
-          <img 
-            src="{% static 'images/sk8r-boi-baby.svg' %}" 
-            alt="A skater boy baby"
-          >
+          {%if baby.image %}
+          <img src={{ baby.image.url }} alt="">
+          {%endif%}
+
         </div>
         <h2 class="card-title">{{ baby.name }}</h2>
-        {% if baby.age > 0 %}
-          <p>A {{ baby.age }} year old {{ baby.breed }}</p>
-        {% else %}
-          <p>A {{ baby.breed }} kitten.</p>
-        {% endif %}
         <p><small>{{ baby.description }}</small></p>
+        <p>Year: <small>{{ baby.year }}</small></p>
       </div>
     </div>
+      </a>
   {% endfor %}
 </section>
 

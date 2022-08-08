@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.generic.edit import CreateView
 from .models import Baby
 
 
@@ -14,5 +15,14 @@ def about(request):
 def babies_index(request):
     babies = Baby.objects.all()
     return render(request, 'babies/index.html', { 'babies': babies })
+
+def babies_detail(request, baby_id):
+  baby = Baby.objects.get(id=baby_id)
+  return render(request, 'babies/detail.html', { 'baby': baby })
+
+class BabyCreate(CreateView):
+  model = Baby
+  fields = '__all__'
+  success_url = '/babies/'
 
 
