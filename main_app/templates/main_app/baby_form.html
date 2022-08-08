@@ -8,7 +8,11 @@
 {% block content %}
 
 <div class="page-header">
-  <h1>Add a Baby</h1>
+    {% if baby %}
+    <h1>Edit {{ baby.name }}</h1>
+  {% else %}
+    <h1>Add a Baby</h1>
+  {% endif %}
   <img src="{% static 'images/nerd-baby.svg' %}" alt="A baby using a computer"/>
 </div>
 <form action="" method="post" class="form-container">

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Baby
 
 
@@ -23,6 +23,14 @@ def babies_detail(request, baby_id):
 class BabyCreate(CreateView):
   model = Baby
   fields = '__all__'
+  success_url = '/babies/'
+
+class BabyUpdate(UpdateView):
+  model = Baby
+  fields = ['year', 'image', 'description']
+
+class BabyDelete(DeleteView):
+  model = Baby
   success_url = '/babies/'
 
 

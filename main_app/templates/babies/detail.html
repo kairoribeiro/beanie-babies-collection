@@ -16,12 +16,15 @@
     {%if baby.image %}
     <img src={{ baby.image.url }} alt="">
     {%endif%}
-
   </div>
   <div class="baby-details">
     <h1>{{ baby.name }}</h1>
     <p>{{ baby.description }}</p>
     <p>Year: <small>{{ baby.year }}</small></p>
+    <div class="baby-actions">
+        <a href="{% url 'babies_update' baby.id %}" class="btn warn">Edit</a>
+        <a href="{% url 'babies_delete' baby.id %}" class="btn danger">Delete</a>
+      </div>
 
   </div>
 </section>
