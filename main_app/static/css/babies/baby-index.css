@@ -1,0 +1,38 @@
+.card-container {
+    padding: 0 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    width: 275px;
+    margin: 10px;
+    border: 1px solid black;
+    box-shadow: 5px 5px 6px -1px #AAA;
+  }
+  
+  .card-content {
+    padding: 10px;
+    width: 100%;
+  }
+  
+  .usr-img {
+    width: 100%;
+    /* border-radius: 10px; */
+  }
+  
+  .card > a {
+    text-decoration: none;
+    color: rgb(17, 20, 17);
+  }
+  
+  .card h2 {
+    margin: 10px 0;
+    font-size: 3.6rem;
+  }
+  
+  .card p {
+    margin: 5px 0;
+    font-size: 1.6rem;
+  }
