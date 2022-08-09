@@ -13,7 +13,7 @@
   {% else %}
     <h1>Add a Baby</h1>
   {% endif %}
-  <img src="{% static 'images/nerd-baby.svg' %}" alt="A baby using a computer"/>
+  <img <img src={{ baby.image.url }} alt="">
 </div>
 <form action="" method="post" class="form-container">
   {% csrf_token %}
