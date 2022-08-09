@@ -10,5 +10,6 @@ urlpatterns = [
     path('babies/create/', views.BabyCreate.as_view(), name='babies_create'),
     path('babies/<int:pk>/update/', views.BabyUpdate.as_view(), name='babies_update'),
     path('babies/<int:pk>/delete/', views.BabyDelete.as_view(), name='babies_delete'),
-    path('accounts/signup/', views.signup, name='signup')
+    path('accounts/signup/', views.signup, name='signup'),
+    
 ]
