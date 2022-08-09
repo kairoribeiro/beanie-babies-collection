@@ -8,14 +8,16 @@
 {% block content %}
 
 <div class="page-header">
-    {% if baby %}
+  {% if baby %}
     <h1>Edit {{ baby.name }}</h1>
+    {%if baby.image %}
+    <img <img src={{ baby.image.url }} alt="">
+    {% endif %}
   {% else %}
     <h1>Add a Baby</h1>
   {% endif %}
-  <img <img src={{ baby.image.url }} alt="">
 </div>
-<form action="" method="post" class="form-container">
+<form action="" method="post" enctype='multipart/form-data' class="form-container">
   {% csrf_token %}
   <table>
     {{ form.as_table }}
