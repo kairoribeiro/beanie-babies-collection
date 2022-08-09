@@ -4,6 +4,8 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Baby
 
 
@@ -15,15 +17,17 @@ class Home(LoginView):
 def about(request):
     return render(request, 'about.html')
 
+@login_required
 def babies_index(request):
-    babies = Baby.objects.all()
+    babies = Baby.objects.filter(user=request.user)
     return render(request, 'babies/index.html', { 'babies': babies })
 
+@login_required
 def babies_detail(request, baby_id):
   baby = Baby.objects.get(id=baby_id)
   return render(request, 'babies/detail.html', { 'baby': baby })
 
-class BabyCreate(CreateView):
+class BabyCreate(LoginRequiredMixin, CreateView):
   model = Baby
   fields = '__all__'
 #   success_url = '/babies/'
@@ -32,11 +36,11 @@ class BabyCreate(CreateView):
     form.instance.user = self.request.user
     return super().form_valid(form)
 
-class BabyUpdate(UpdateView):
+class BabyUpdate(LoginRequiredMixin, UpdateView):
   model = Baby
   fields = ['year', 'image', 'description']
 
-class BabyDelete(DeleteView):
+class BabyDelete(LoginRequiredMixin, DeleteView):
   model = Baby
   success_url = '/babies/'
 
