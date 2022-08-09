@@ -15,8 +15,8 @@ main {
     flex-direction: column;
   }
   
-  .header-logo-container {
-    display: none;
+  h1 {
+    font-size: 40px;
   }
   
   .logo-container {
@@ -47,7 +47,7 @@ main {
     margin: 14px 0 0px;
   }
   
-  .login label {
+  /* .login label {
     font-size: var(--font-reg);
     margin-bottom: 6px;
   }
@@ -55,7 +55,7 @@ main {
   .login input {
     font-size: var(--font-l);
     padding: 2px 4px;
-  }
+  } */
   
   .login .btn {
     align-self: flex-end;
@@ -74,13 +74,13 @@ main {
       width: 40%;
     }
   
-    .login {
+    /* .login {
       border: var(--borders);
       padding: 20px;
       border-radius: var(--card-border-radius);
       box-shadow: var(--card-box-shadow);
-      width: 100%;
-    }
+      width: 100%; */
+    /* } */
   
     .logo-container {
       max-width: 520px;

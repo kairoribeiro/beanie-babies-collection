@@ -29,8 +29,8 @@ def babies_detail(request, baby_id):
 
 class BabyCreate(LoginRequiredMixin, CreateView):
   model = Baby
-  fields = '__all__'
-#   success_url = '/babies/'
+  fields = ['name', 'year', 'image', 'description']
+  success_url = '/babies/'
 
   def form_valid(self, form):
     form.instance.user = self.request.user
