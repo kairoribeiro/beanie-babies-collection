@@ -1,1 +1,1 @@
-web: gunicorn beaniebabiescollector.wsgi:application --log-file - --log-level debug
+web: gunicorn beaniebabiescollector.wsgi
