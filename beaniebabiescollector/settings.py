@@ -17,9 +17,9 @@ from pathlib import Path
 import os
 import django_heroku
 
-# import cloudinary 
-# import cloudinary.uploader 
-# import cloudinary.api
+import cloudinary
+import cloudinary.uploader 
+import cloudinary.api
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -56,15 +56,16 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    # "whitenoise.runserver_nostatic",
+    "whitenoise.runserver_nostatic",
     'django.contrib.staticfiles',
     'cloudinary_storage',
     'cloudinary',
+    # 'pictures',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    # 'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -160,6 +161,14 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+cloudinary.config(
+cloud_name = "kairo-ribeiro",
+api_key = "867798184324966",
+api_secret = "xppkSjlh-zyd0RWvPuq-N1QXqBc",
+# api_proxy = "http://proxy.server:9999"
+)
+
 
 
 django_heroku.settings(locals())

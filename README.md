@@ -3,8 +3,8 @@
 This app is an option for those who collect Beanie Babies and want to not just keep their stuffed animals safe at home but also proudly display them online to an entire community of collectors.
 
 Getting Started:
-    *[Deployed link] (https://beanie-babies-collector.herokuapp.com/) * <br>
-    *[Trello planning] (https://trello.com/b/H96jlz6f/beanie-babies-collector) *
+    *[Deployed link](https://beanie-babies-collector.herokuapp.com/) * <br>
+    *[Trello planning](https://trello.com/b/H96jlz6f/beanie-babies-collector) *
 
 
 Next Steps:
