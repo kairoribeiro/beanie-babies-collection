@@ -60,7 +60,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary_storage',
     'cloudinary',
-    # 'pictures',
 ]
 
 MIDDLEWARE = [
@@ -163,12 +162,11 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 cloudinary.config(
-cloud_name = "kairo-ribeiro",
-api_key = "867798184324966",
-api_secret = "xppkSjlh-zyd0RWvPuq-N1QXqBc",
-# api_proxy = "http://proxy.server:9999"
+cloud_name =env('CLOUD_NAME') ,
+api_key = env('API_KEY'),
+api_secret = env('API_SECRET'),
+# # api_proxy = "http://proxy.server:9999"
 )
-
 
 
 django_heroku.settings(locals())
