@@ -162,10 +162,9 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 cloudinary.config(
-cloud_name =env('CLOUD_NAME') ,
+cloud_name = env('CLOUD_NAME') ,
 api_key = env('API_KEY'),
 api_secret = env('API_SECRET'),
-# # api_proxy = "http://proxy.server:9999"
 )
 
 

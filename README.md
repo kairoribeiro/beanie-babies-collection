@@ -18,6 +18,8 @@ Next Steps:
   <li>CSS</li>
   <li>Python</li>
   <li>Heroku</li>
+  <li>Cloudinary</li>
+
 </ol>
 
 
