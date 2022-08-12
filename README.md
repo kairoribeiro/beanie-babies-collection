@@ -7,7 +7,7 @@ Getting Started:<br>
     *[Trello planning](https://trello.com/b/H96jlz6f/beanie-babies-collector)*
 
 
-Next Steps:
+
 
 ![WebPage!](/media/images/ScreenShot.png "Main View")
 
